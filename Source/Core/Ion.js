@@ -10,7 +10,7 @@ define([
 
     var defaultTokenCredit;
     var defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlZTNjZGYzNC0wMzI5LTQ3NGEtOWM1Yy03YzhhOWU4NTI2MGQiLCJpZCI6MjU5LCJzY29wZXMiOlsiYXNyIiwiZ2MiXSwiaWF0IjoxNTU0MTQwMTQxfQ.egqhQs14qStY2dQTESVJz2JnUoXFNz4EFkdl50yqoOw';
-    var cesiumjsDotOrgToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlMWQ3ZWJlYy01ZDM1LTQ2NTctODVhMS04MjQ2MGNjOTBkNjUiLCJpZCI6MjU5LCJzY29wZXMiOlsiYXNyIiwiZ2MiXSwiaWF0IjoxNTUzMTk2Njk4fQ.l8g-x32loizk5_OA1P8D1zOUq6Fkngh4Fu345EDD07o';
+    var cesiumjsDotOrgToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmYmYzM2U3ZC0zZjYxLTQyZDctOTc2ZC1hMTA1M2NjNTA4NWQiLCJpZCI6MjU5LCJzY29wZXMiOlsiYXNyIiwiZ2MiXSwiaWF0IjoxNTU0MTQyODgzfQ.cU7LaRJlPVgOW9UK1p4RWu9oBxfAAinpjTsixvC59zE';
 
     /**
      * Default settings for accessing the Cesium ion API.
