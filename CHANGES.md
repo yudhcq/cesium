@@ -1,6 +1,30 @@
 Change Log
 ==========
 
+### 1.56 - 2019-04-01
+
+##### Breaking Changes :mega:
+* `Resource.fetchImage` now returns an `ImageBitmap` instead of `Image` when supported. This allows for decoding images while fetching using `createImageBitmap` to greatly speed up texture upload and decrease frame drops when loading models with large textures. [#7579](https://github.com/AnalyticalGraphicsInc/cesium/pull/7579)
+* `Cesium3DTileStyle.style` now has an empty `Object` as its default value, instead of `undefined`. [#7567](https://github.com/AnalyticalGraphicsInc/cesium/issues/7567)
+* `Scene.clampToHeight` now takes an optional `width` argument before the `result` argument. [#7693](https://github.com/AnalyticalGraphicsInc/cesium/pull/7693)
+* In the `Resource` class, `addQueryParameters` and `addTemplateValues` have been removed. Please use `setQueryParameters` and `setTemplateValues` instead. [#7695](https://github.com/AnalyticalGraphicsInc/cesium/issues/7695)
+
+##### Deprecated :hourglass_flowing_sand:
+* `Resource.fetchImage` now takes an options object. Use `resource.fetchImage({ preferBlob: true })` instead of `resource.fetchImage(true)`. The previous function definition will no longer work in 1.57. [#7579](https://github.com/AnalyticalGraphicsInc/cesium/pull/7579)
+
+##### Additions :tada:
+* Added support for touch and hold gesture. The touch and hold delay can be customized by updating `ScreenSpaceEventHandler.touchHoldDelayMilliseconds`. [#7286](https://github.com/AnalyticalGraphicsInc/cesium/pull/7286)
+* `Resource.fetchImage` now has a `flipY` option to vertically flip an image during fetch & decode. It is only valid when `ImageBitmapOptions` is supported by the browser. [#7579](https://github.com/AnalyticalGraphicsInc/cesium/pull/7579)
+* Added `backFaceCulling` and `normalShading` options to `PointCloudShading`. Both options are only applicable for point clouds containing normals. [#7399](https://github.com/AnalyticalGraphicsInc/cesium/pull/7399)
+* `Cesium3DTileStyle.style` reacts to updates and represents the current state of the style. [#7567](https://github.com/AnalyticalGraphicsInc/cesium/issues/7567)
+
+##### Fixes :wrench:
+* Fixed the value for `BlendFunction.ONE_MINUS_CONSTANT_COLOR`. [#7624](https://github.com/AnalyticalGraphicsInc/cesium/pull/7624)
+* Fixed `HeadingPitchRoll.pitch` being `NaN` when using `.fromQuaternion` due to a rounding error for pitches close to +/- 90°. [#7654](https://github.com/AnalyticalGraphicsInc/cesium/pull/7654)
+* Fixed a type of crash caused by the camera being rotated through terrain. [#6783](https://github.com/AnalyticalGraphicsInc/cesium/issues/6783)
+* Fixed an error in `Resource` when used with template replacements using numeric keys. [#7668](https://github.com/AnalyticalGraphicsInc/cesium/pull/7668)
+* Fixed an error in `Cesium3DTilePointFeature` where `anchorLineColor` used the same color instance instead of cloning the color [#7686](https://github.com/AnalyticalGraphicsInc/cesium/pull/7686)
+
 ### 1.55 - 2019-03-01
 
 ##### Breaking Changes :mega:
